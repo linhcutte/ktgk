@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu nhóm</title>
+    <title>Trang Chủ Nhóm</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Nhóm Công Nghệ Thông Tin</h1>
-        <p>Chúng tôi là nhóm 5 sinh viên đam mê lập trình và công nghệ.</p>
-        <div id="team-members" class="team-list">
-            <!-- Các thành viên sẽ được thêm bằng JavaScript -->
+        <p>Chúng tôi là nhóm 5 sinh viên đam mê công nghệ và lập trình.</p>
+        <div class="team">
+            <!-- Thông tin từng thành viên -->
+            <div class="member">
+                <img src="assets/images/nguyendanhlinh.jpeg" alt="Nguyễn Danh Linh" class="member-img" data-link="assets/student/nguyendanhlinh.html">
+                <h3>Nguyễn Danh Linh</h3>
+            </div>
+            <div class="member">
+                <img src="assets/images/member2.jpeg" alt="Thành viên 2" class="member-img" data-link="assets/student/member2.html">
+                <h3>Thành viên 2</h3>
+            </div>
+            <div class="member">
+                <img src="assets/images/member3.jpeg" alt="Thành viên 3" class="member-img" data-link="assets/student/member3.html">
+                <h3>Thành viên 3</h3>
+            </div>
+            <div class="member">
+                <img src="assets/images/member4.jpeg" alt="Thành viên 4" class="member-img" data-link="assets/student/member4.html">
+                <h3>Thành viên 4</h3>
+            </div>
+            <div class="member">
+                <img src="assets/images/member5.jpeg" alt="Thành viên 5" class="member-img" data-link="assets/student/member5.html">
+                <h3>Thành viên 5</h3>
+            </div>
         </div>
     </div>
-
-    <div id="member-detail" class="modal hidden">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="member-img" src="" alt="Ảnh thành viên">
-            <h2 id="member-name"></h2>
-            <p id="member-bio"></p>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
