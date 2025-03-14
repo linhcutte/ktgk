@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
+
     sections.forEach((section, index) => {
         section.style.opacity = "0";
         section.style.transform = "translateY(20px)";
@@ -13,10 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const profileImg = document.querySelector(".profile-img");
     profileImg.addEventListener("mouseover", () => {
         profileImg.style.transform = "scale(1.1) rotate(5deg)";
-        profileImg.style.transition = "transform 0.3s ease-in-out";
     });
 
     profileImg.addEventListener("mouseleave", () => {
-        profileImg.style.transform = "scale(1) rotate(0)";
+        profileImg.style.transform = "scale(1) rotate(0deg)";
     });
 });

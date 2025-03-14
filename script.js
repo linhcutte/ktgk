@@ -1,20 +1,73 @@
-const members = [
-    { name: "Nguyễn Văn A", img: "images/nguyendanhlinh.jpeg", page: "student/nguyendanhlinh.html" },
-    { name: "Trần Thị B", img: "images/member2.jpg", page: "members/member2.html" },
-    { name: "Lê Văn C", img: "images/member3.jpg", page: "members/member3.html" },
-    { name: "Phạm Thị D", img: "images/member4.jpg", page: "members/member4.html" },
-    { name: "Hoàng Văn E", img: "images/member5.jpg", page: "members/member5.html" }
-];
+document.addEventListener("DOMContentLoaded", function () {
+    // Danh sách thành viên
+    const members = [
+        {
+            name: "Nguyễn Danh Linh",
+            bio: "Thành viên yêu thích lập trình Web.",
+            img: "...assests/images/nguyendanhlinh.jpeg",
+        },
+        {
+            name: "Nguyễn Đức Hân",
+            bio: "Thành viên chuyên nghiên cứu AI.",
+            img: "path/to/image2.jpg",
+        },
+        {
+            name: "Trần Quốc Toàn",
+            bio: "Thành viên thích phát triển ứng dụng di động.",
+            img: "path/to/image3.jpg",
+        },
+        {
+            name: "Trần Minh Cương",
+            bio: "Thành viên thích phát triển ứng dụng di động.",
+            img: "path/to/image3.jpg",
+        },
+        {
+            name: "Nguyễn Thanh Tùng",
+            bio: "Thành viên thích phát triển ứng dụng di động.",
+            img: "path/to/image3.jpg",
+        },
+    ];
 
-const teamContainer = document.getElementById("team-members");
+    const teamList = document.getElementById("team-members");
+    const modal = document.getElementById("member-detail");
+    const modalContent = {
+        img: document.getElementById("member-img"),
+        name: document.getElementById("member-name"),
+        bio: document.getElementById("member-bio"),
+    };
+    const closeBtn = document.querySelector(".close");
 
-// Hiển thị danh sách thành viên
-members.forEach((member) => {
-    const div = document.createElement("div");
-    div.classList.add("member-card");
-    div.innerHTML = `<img src="${member.img}" alt="${member.name}"><h3>${member.name}</h3>`;
-    div.addEventListener("click", () => {
-        window.location.href = member.page;
+    // Tạo danh sách thành viên
+    members.forEach((member, index) => {
+        const memberDiv = document.createElement("div");
+        memberDiv.className = "team-member";
+        memberDiv.innerHTML = `
+            <img src="${member.img}" alt="${member.name}" class="member-img">
+            <h3>${member.name}</h3>
+        `;
+        memberDiv.addEventListener("click", () => {
+            showMemberDetail(member);
+        });
+        teamList.appendChild(memberDiv);
     });
-    teamContainer.appendChild(div);
+
+    // Hiển thị thông tin chi tiết thành viên
+    function showMemberDetail(member) {
+        modalContent.img.src = member.img;
+        modalContent.name.textContent = member.name;
+        modalContent.bio.textContent = member.bio;
+        modal.classList.remove("hidden");
+    }
+
+    // Đóng modal
+    closeBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    // Đóng modal khi click ra ngoài
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.add("hidden");
+        }
+    });
 });
